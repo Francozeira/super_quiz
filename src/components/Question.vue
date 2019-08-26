@@ -2,7 +2,7 @@
     <div class="question">
 			<span>{{question.text}}</span>
 			<ul class="answers">
-				<li v-for="(answer, i) in question.answers" :key="answer.text">
+				<li v-for="(answer, i) in question.answers" :key="answer.text" @click="$emit('selected', answer.correct)">
 					<span class="number">{{ i + 1 }}</span>
 					<span class="text">{{answer.text}}</span>
 				</li>
@@ -24,12 +24,13 @@ export default {
 			
 		}
 	},
+
 }
 </script>
 
 <style>
     .question {
-        height: 400px;
+        min-height: 400px;
         color: #000;
         background-color: #FFF;
         width: 70%;
@@ -51,16 +52,17 @@ export default {
 
     .answers li {
         margin: 20px;
-        background-color: #89c454;
+        border:#1e9c31 2px solid;
+        background: radial-gradient( #1e9c31, #89c454);        
         border-radius: 8px;
         width: 40%;
-
+        color: #FFF;
         display: flex;
     }
 
     .answers .number {
         padding: 10px;
-        background-color: #1e9c31;
+        background: #1e9c31;        
         color: #FFF;
         flex-basis: 30px;
         border-top-left-radius: 8px;

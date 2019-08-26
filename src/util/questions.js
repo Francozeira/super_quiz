@@ -53,4 +53,13 @@ export default [
             { text: 'ZORRO', correct: false }
         ]
     },
+    {
+        text: "In The Legend Of Zelda Ocarina Of Time, what is the song used to call Link's horse?",
+        answers: [
+            { text: 'Song of Storms', correct: false },
+            { text: "Zelda's Lullaby", correct: false },
+            { text: "Epona's song", correct: true },
+            { text: "Saria's Song", correct: false }
+        ]
+    },
 ]
